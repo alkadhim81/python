@@ -7,7 +7,7 @@ class Television:
     MIN_CHANNEL: int = 0
     MAX_CHANNEL: int = 3
 
-    def __init__(self):
+    def __init__(self) -> None:
         '''
         define variables status, muted volume and channel
         '''
@@ -16,13 +16,13 @@ class Television:
         self.__volume: int = Television.MIN_VOLUME
         self.__channel: int = Television.MIN_CHANNEL
 
-    def power(self):
+    def power(self)-> None:
         '''
         turn the TV on or off.
         '''
         self.__status = not self.__status
 
-    def mute(self):
+    def mute(self)-> None:
         '''
         Mute and unmute the TV
         '''
@@ -30,7 +30,7 @@ class Television:
             self.__muted = not self.__muted
 
 
-    def channel_down(self):
+    def channel_down(self)-> None:
         '''
         Decrease the TV channel
         '''
@@ -40,7 +40,7 @@ class Television:
             else:
                 self.__channel = Television.MAX_CHANNEL
 
-    def channel_up(self):
+    def channel_up(self)-> None:
         '''
         Increase the TV channel
         '''
@@ -51,7 +51,7 @@ class Television:
                 self.__channel = Television.MIN_CHANNEL
 
 
-    def volume_up(self):
+    def volume_up(self)-> None:
         '''
         Lower the TV volume
         '''
@@ -60,7 +60,7 @@ class Television:
             if self.__volume < Television.MAX_VOLUME:
                 self.__volume +=1
 
-    def volume_down(self):
+    def volume_down(self)-> None:
         '''
         Increase the TV volume
         '''
@@ -69,7 +69,7 @@ class Television:
             if self.__volume > Television.MIN_VOLUME:
                 self.__volume -= 1
 
-    def __str__(self):
+    def __str__(self)-> str:
         '''
         Give TV status
         :return: Power, Channel and Volume status.
